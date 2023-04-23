@@ -8,21 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		1F5C76A429E5077900033918 /* RealQuickApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C76A329E5077900033918 /* RealQuickApp.swift */; };
-		1F5C76A629E5077900033918 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C76A529E5077900033918 /* ContentView.swift */; };
+		1F5C76A629E5077900033918 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C76A529E5077900033918 /* MainView.swift */; };
 		1F5C76A829E5077A00033918 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F5C76A729E5077A00033918 /* Assets.xcassets */; };
 		1F5C76AB29E5077A00033918 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F5C76AA29E5077A00033918 /* Preview Assets.xcassets */; };
 		1F5C76B329E5079500033918 /* RealQuick.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C76B129E5079500033918 /* RealQuick.xcdatamodeld */; };
 		1F5C76B529E5079E00033918 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C76B429E5079E00033918 /* DataController.swift */; };
+		1FA2B93D29F2205D0024EEF8 /* RecordEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B93C29F2205D0024EEF8 /* RecordEntry.swift */; };
+		1FA2B93F29F220810024EEF8 /* EntryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B93E29F220810024EEF8 /* EntryDetail.swift */; };
+		1FA2B94129F2209F0024EEF8 /* EntryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B94029F2209F0024EEF8 /* EntryList.swift */; };
+		1FA2B94529F228660024EEF8 /* JournalEntry+PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B94429F228660024EEF8 /* JournalEntry+PreviewProvider.swift */; };
+		1FA2B94729F45FF50024EEF8 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B94629F45FF50024EEF8 /* SpeechRecognizer.swift */; };
+		1FA2B94929F5ECAB0024EEF8 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B94829F5ECAB0024EEF8 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1F5C76A029E5077900033918 /* RealQuick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealQuick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F5C76A329E5077900033918 /* RealQuickApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealQuickApp.swift; sourceTree = "<group>"; };
-		1F5C76A529E5077900033918 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1F5C76A529E5077900033918 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		1F5C76A729E5077A00033918 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F5C76AA29E5077A00033918 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1F5C76B229E5079500033918 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		1F5C76B429E5079E00033918 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		1FA2B93C29F2205D0024EEF8 /* RecordEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordEntry.swift; sourceTree = "<group>"; };
+		1FA2B93E29F220810024EEF8 /* EntryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetail.swift; sourceTree = "<group>"; };
+		1FA2B94029F2209F0024EEF8 /* EntryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryList.swift; sourceTree = "<group>"; };
+		1FA2B94429F228660024EEF8 /* JournalEntry+PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JournalEntry+PreviewProvider.swift"; sourceTree = "<group>"; };
+		1FA2B94629F45FF50024EEF8 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
+		1FA2B94829F5ECAB0024EEF8 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,11 +68,11 @@
 			isa = PBXGroup;
 			children = (
 				1F5C76A329E5077900033918 /* RealQuickApp.swift */,
-				1F5C76A529E5077900033918 /* ContentView.swift */,
 				1F5C76B129E5079500033918 /* RealQuick.xcdatamodeld */,
-				1F5C76B429E5079E00033918 /* DataController.swift */,
+				1FA2B94329F2284F0024EEF8 /* Model */,
 				1F5C76A729E5077A00033918 /* Assets.xcassets */,
 				1F5C76A929E5077A00033918 /* Preview Content */,
+				1FA2B94229F221920024EEF8 /* Views */,
 			);
 			path = RealQuick;
 			sourceTree = "<group>";
@@ -71,6 +83,28 @@
 				1F5C76AA29E5077A00033918 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1FA2B94229F221920024EEF8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1F5C76A529E5077900033918 /* MainView.swift */,
+				1FA2B93C29F2205D0024EEF8 /* RecordEntry.swift */,
+				1FA2B93E29F220810024EEF8 /* EntryDetail.swift */,
+				1FA2B94029F2209F0024EEF8 /* EntryList.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1FA2B94329F2284F0024EEF8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1F5C76B429E5079E00033918 /* DataController.swift */,
+				1FA2B94429F228660024EEF8 /* JournalEntry+PreviewProvider.swift */,
+				1FA2B94629F45FF50024EEF8 /* SpeechRecognizer.swift */,
+				1FA2B94829F5ECAB0024EEF8 /* Theme.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,8 +177,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F5C76A629E5077900033918 /* ContentView.swift in Sources */,
+				1FA2B93D29F2205D0024EEF8 /* RecordEntry.swift in Sources */,
+				1FA2B94729F45FF50024EEF8 /* SpeechRecognizer.swift in Sources */,
+				1FA2B94929F5ECAB0024EEF8 /* Theme.swift in Sources */,
+				1F5C76A629E5077900033918 /* MainView.swift in Sources */,
+				1FA2B94529F228660024EEF8 /* JournalEntry+PreviewProvider.swift in Sources */,
 				1F5C76B529E5079E00033918 /* DataController.swift in Sources */,
+				1FA2B94129F2209F0024EEF8 /* EntryList.swift in Sources */,
+				1FA2B93F29F220810024EEF8 /* EntryDetail.swift in Sources */,
 				1F5C76A429E5077900033918 /* RealQuickApp.swift in Sources */,
 				1F5C76B329E5079500033918 /* RealQuick.xcdatamodeld in Sources */,
 			);
@@ -277,6 +317,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"RealQuick/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "You can automatically include your current location in a journal entry.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to transcribe journal entries. Audio recordings are discarded after transcription.";
+				INFOPLIST_KEY_NSSiriUsageDescription = "TODO Siri Usage Description";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can transcribe journal entries using your voice.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -305,6 +349,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"RealQuick/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "You can automatically include your current location in a journal entry.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to transcribe journal entries. Audio recordings are discarded after transcription.";
+				INFOPLIST_KEY_NSSiriUsageDescription = "TODO Siri Usage Description";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can transcribe journal entries using your voice.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

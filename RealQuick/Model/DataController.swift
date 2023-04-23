@@ -19,10 +19,9 @@ class DataController: ObservableObject {
         }
     }
     
-    static var preview: DataController = {
+static var preview: DataController = {
         let dataController = DataController()
-        let viewContext = dataController.container.viewContext
-            
+        
         return dataController
     }()
 }
