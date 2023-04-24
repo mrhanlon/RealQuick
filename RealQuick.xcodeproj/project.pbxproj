@@ -8,33 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		1F5C76A429E5077900033918 /* RealQuickApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C76A329E5077900033918 /* RealQuickApp.swift */; };
-		1F5C76A629E5077900033918 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C76A529E5077900033918 /* MainView.swift */; };
 		1F5C76A829E5077A00033918 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F5C76A729E5077A00033918 /* Assets.xcassets */; };
 		1F5C76AB29E5077A00033918 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F5C76AA29E5077A00033918 /* Preview Assets.xcassets */; };
-		1F5C76B329E5079500033918 /* RealQuick.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C76B129E5079500033918 /* RealQuick.xcdatamodeld */; };
-		1F5C76B529E5079E00033918 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C76B429E5079E00033918 /* DataController.swift */; };
-		1FA2B93D29F2205D0024EEF8 /* RecordEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B93C29F2205D0024EEF8 /* RecordEntry.swift */; };
+		1FA2B93D29F2205D0024EEF8 /* RecordingSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B93C29F2205D0024EEF8 /* RecordingSheet.swift */; };
 		1FA2B93F29F220810024EEF8 /* EntryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B93E29F220810024EEF8 /* EntryDetail.swift */; };
 		1FA2B94129F2209F0024EEF8 /* EntryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B94029F2209F0024EEF8 /* EntryList.swift */; };
-		1FA2B94529F228660024EEF8 /* JournalEntry+PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B94429F228660024EEF8 /* JournalEntry+PreviewProvider.swift */; };
 		1FA2B94729F45FF50024EEF8 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B94629F45FF50024EEF8 /* SpeechRecognizer.swift */; };
 		1FA2B94929F5ECAB0024EEF8 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B94829F5ECAB0024EEF8 /* Theme.swift */; };
+		1FA2B94B29F5ED620024EEF8 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B94A29F5ED620024EEF8 /* JournalEntry.swift */; };
+		1FA2B94E29F5F1830024EEF8 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B94D29F5F1830024EEF8 /* DateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1F5C76A029E5077900033918 /* RealQuick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealQuick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F5C76A329E5077900033918 /* RealQuickApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealQuickApp.swift; sourceTree = "<group>"; };
-		1F5C76A529E5077900033918 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		1F5C76A729E5077A00033918 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F5C76AA29E5077A00033918 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		1F5C76B229E5079500033918 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		1F5C76B429E5079E00033918 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		1FA2B93C29F2205D0024EEF8 /* RecordEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordEntry.swift; sourceTree = "<group>"; };
+		1FA2B93C29F2205D0024EEF8 /* RecordingSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingSheet.swift; sourceTree = "<group>"; };
 		1FA2B93E29F220810024EEF8 /* EntryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetail.swift; sourceTree = "<group>"; };
 		1FA2B94029F2209F0024EEF8 /* EntryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryList.swift; sourceTree = "<group>"; };
-		1FA2B94429F228660024EEF8 /* JournalEntry+PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JournalEntry+PreviewProvider.swift"; sourceTree = "<group>"; };
 		1FA2B94629F45FF50024EEF8 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		1FA2B94829F5ECAB0024EEF8 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		1FA2B94A29F5ED620024EEF8 /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
+		1FA2B94D29F5F1830024EEF8 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,11 +64,11 @@
 			isa = PBXGroup;
 			children = (
 				1F5C76A329E5077900033918 /* RealQuickApp.swift */,
-				1F5C76B129E5079500033918 /* RealQuick.xcdatamodeld */,
-				1FA2B94329F2284F0024EEF8 /* Model */,
 				1F5C76A729E5077A00033918 /* Assets.xcassets */,
-				1F5C76A929E5077A00033918 /* Preview Content */,
+				1FA2B94329F2284F0024EEF8 /* Model */,
 				1FA2B94229F221920024EEF8 /* Views */,
+				1FA2B94C29F5F1490024EEF8 /* Utils */,
+				1F5C76A929E5077A00033918 /* Preview Content */,
 			);
 			path = RealQuick;
 			sourceTree = "<group>";
@@ -88,8 +84,7 @@
 		1FA2B94229F221920024EEF8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1F5C76A529E5077900033918 /* MainView.swift */,
-				1FA2B93C29F2205D0024EEF8 /* RecordEntry.swift */,
+				1FA2B93C29F2205D0024EEF8 /* RecordingSheet.swift */,
 				1FA2B93E29F220810024EEF8 /* EntryDetail.swift */,
 				1FA2B94029F2209F0024EEF8 /* EntryList.swift */,
 			);
@@ -99,12 +94,19 @@
 		1FA2B94329F2284F0024EEF8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1F5C76B429E5079E00033918 /* DataController.swift */,
-				1FA2B94429F228660024EEF8 /* JournalEntry+PreviewProvider.swift */,
 				1FA2B94629F45FF50024EEF8 /* SpeechRecognizer.swift */,
 				1FA2B94829F5ECAB0024EEF8 /* Theme.swift */,
+				1FA2B94A29F5ED620024EEF8 /* JournalEntry.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1FA2B94C29F5F1490024EEF8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1FA2B94D29F5F1830024EEF8 /* DateExtension.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,16 +179,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FA2B93D29F2205D0024EEF8 /* RecordEntry.swift in Sources */,
+				1FA2B93D29F2205D0024EEF8 /* RecordingSheet.swift in Sources */,
 				1FA2B94729F45FF50024EEF8 /* SpeechRecognizer.swift in Sources */,
+				1FA2B94B29F5ED620024EEF8 /* JournalEntry.swift in Sources */,
 				1FA2B94929F5ECAB0024EEF8 /* Theme.swift in Sources */,
-				1F5C76A629E5077900033918 /* MainView.swift in Sources */,
-				1FA2B94529F228660024EEF8 /* JournalEntry+PreviewProvider.swift in Sources */,
-				1F5C76B529E5079E00033918 /* DataController.swift in Sources */,
+				1FA2B94E29F5F1830024EEF8 /* DateExtension.swift in Sources */,
 				1FA2B94129F2209F0024EEF8 /* EntryList.swift in Sources */,
 				1FA2B93F29F220810024EEF8 /* EntryDetail.swift in Sources */,
 				1F5C76A429E5077900033918 /* RealQuickApp.swift in Sources */,
-				1F5C76B329E5079500033918 /* RealQuick.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,19 +393,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		1F5C76B129E5079500033918 /* RealQuick.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				1F5C76B229E5079500033918 /* Model.xcdatamodel */,
-			);
-			currentVersion = 1F5C76B229E5079500033918 /* Model.xcdatamodel */;
-			path = RealQuick.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 1F5C769829E5077900033918 /* Project object */;
 }

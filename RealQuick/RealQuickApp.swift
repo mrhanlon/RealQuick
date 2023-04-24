@@ -9,12 +9,11 @@ import SwiftUI
 
 @main
 struct VoiceLogApp: App {
-    @StateObject private var dataController = DataController()
+    @State private var entries = JournalEntry.sampleData
     
     var body: some Scene {
         WindowGroup {
-            MainView()
-                .environment(\.managedObjectContext, dataController.container.viewContext)
+            EntryList(entries: $entries)
         }
     }
 }

@@ -8,58 +8,77 @@
 import SwiftUI
 
 struct EntryList: View {
-    @Environment(\.managedObjectContext) var moc
+    @Binding var entries: [JournalEntry]
+    @State private var isRecording = false
     
-    @FetchRequest(sortDescriptors: [
-        SortDescriptor(\.timestamp)
-    ]) var entries: FetchedResults<JournalEntry>
-    
-    @State private var selectedEntry: JournalEntry?
-    
-    private static var dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMMM d, H:mm"
-        return formatter
-    }()
+    private func addEntry(text: String) {
+        print(text)
+    }
     
     private func deleteEntry(at offsets: IndexSet) {
-        for index in offsets {
-            let entry = entries[index]
-            moc.delete(entry)
-        }
+        print(entries.count)
+        entries.remove(atOffsets: offsets)
+        print(entries.count)
     }
     
     var body: some View {
-        List {
-            Section {
-                ForEach(entries) { entry in
-                    Button {
-                        selectedEntry = entry
-                    } label: {
-                        Text(entry.timestamp!, format: Date.FormatStyle().month().day().hour().minute()
-                        )
+        NavigationStack {
+            List {
+                ForEach($entries) { $entry in
+                    NavigationLink(destination: EntryDetail(entry: $entry)) {
+                        VStack(alignment: .leading) {
+                            HStack {
+                                Text(entry.timestamp, style: .date)
+                                Text(entry.timestamp, style: .time)
+                            }
+                            .font(.subheadline)
+                            Text(entry.text).lineLimit(1)
+                                .foregroundColor(.secondary)
+                        }
                     }
-                    .foregroundColor(.primary)
                 }
                 .onDelete(perform: deleteEntry)
-            } header: {
-                Text(String(format: "%d quick entries", entries.count))
+            }
+            .navigationTitle("Entries")
+            .navigationBarTitleDisplayMode(.large)
+            .toolbar {
+                ToolbarItemGroup(placement: .bottomBar) {
+                    Button(action: {
+                        isRecording = true
+                    }) {
+                        ZStack {
+                            Circle()
+                                .foregroundColor(.accentColor)
+                                .frame(width: 60, height: 60)
+                            Label(
+                                "Real Quick",
+                                systemImage: "mic"
+                            )
+                            .labelStyle(.iconOnly)
+                            .foregroundColor(.white)
+                        }
+                    }
+                }
+            }
+            .sheet(isPresented: $isRecording) {
+                print("Recording stopped!")
+            } content: {
+                RecordingSheet(entries: $entries, isRecording: $isRecording)
             }
         }
-        .listStyle(.insetGrouped)
-        .sheet(item: $selectedEntry) { entry in
-            EntryDetail(entry: entry)
-        }
-        .background(Color("BackgroundColor"))
-        .scrollContentBackground(.hidden)
     }
 }
 
 struct EntryList_Previews: PreviewProvider {
-    static var dataController = DataController.preview
-    
     static var previews: some View {
-        EntryList()
-            .environment(\.managedObjectContext, dataController.container.viewContext)
+        MockView()
+    }
+    
+    struct MockView: View {
+        @State var entries = JournalEntry.sampleData
+        
+        var body: some View {
+            EntryList(entries: $entries)
+        }
     }
 }
