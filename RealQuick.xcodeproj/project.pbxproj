@@ -14,9 +14,9 @@
 		1FA2B93F29F220810024EEF8 /* EntryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B93E29F220810024EEF8 /* EntryDetail.swift */; };
 		1FA2B94129F2209F0024EEF8 /* EntryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B94029F2209F0024EEF8 /* EntryList.swift */; };
 		1FA2B94729F45FF50024EEF8 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B94629F45FF50024EEF8 /* SpeechRecognizer.swift */; };
-		1FA2B94929F5ECAB0024EEF8 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B94829F5ECAB0024EEF8 /* Theme.swift */; };
 		1FA2B94B29F5ED620024EEF8 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B94A29F5ED620024EEF8 /* JournalEntry.swift */; };
 		1FA2B94E29F5F1830024EEF8 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B94D29F5F1830024EEF8 /* DateExtension.swift */; };
+		1FA2B95229F8C8140024EEF8 /* JournalEntryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B95129F8C8140024EEF8 /* JournalEntryStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,9 +28,9 @@
 		1FA2B93E29F220810024EEF8 /* EntryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetail.swift; sourceTree = "<group>"; };
 		1FA2B94029F2209F0024EEF8 /* EntryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryList.swift; sourceTree = "<group>"; };
 		1FA2B94629F45FF50024EEF8 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
-		1FA2B94829F5ECAB0024EEF8 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		1FA2B94A29F5ED620024EEF8 /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
 		1FA2B94D29F5F1830024EEF8 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		1FA2B95129F8C8140024EEF8 /* JournalEntryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				1FA2B94629F45FF50024EEF8 /* SpeechRecognizer.swift */,
-				1FA2B94829F5ECAB0024EEF8 /* Theme.swift */,
 				1FA2B94A29F5ED620024EEF8 /* JournalEntry.swift */,
+				1FA2B95129F8C8140024EEF8 /* JournalEntryStore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,9 +180,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FA2B93D29F2205D0024EEF8 /* RecordingSheet.swift in Sources */,
+				1FA2B95229F8C8140024EEF8 /* JournalEntryStore.swift in Sources */,
 				1FA2B94729F45FF50024EEF8 /* SpeechRecognizer.swift in Sources */,
 				1FA2B94B29F5ED620024EEF8 /* JournalEntry.swift in Sources */,
-				1FA2B94929F5ECAB0024EEF8 /* Theme.swift in Sources */,
 				1FA2B94E29F5F1830024EEF8 /* DateExtension.swift in Sources */,
 				1FA2B94129F2209F0024EEF8 /* EntryList.swift in Sources */,
 				1FA2B93F29F220810024EEF8 /* EntryDetail.swift in Sources */,

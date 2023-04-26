@@ -1,10 +1,3 @@
-//
-//  DateExtension.swift
-//  RealQuick
-//
-//  Created by Matthew Hanlon on 4/23/23.
-//
-
 import Foundation
 
 extension Date {

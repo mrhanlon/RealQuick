@@ -1,10 +1,3 @@
-//
-//  EntryDetail.swift
-//  RealQuick
-//
-//  Created by Matthew Hanlon on 4/20/23.
-//
-
 import SwiftUI
 
 struct EntryDetail: View {
@@ -12,16 +5,21 @@ struct EntryDetail: View {
     
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading) {
+            VStack {
                 Text(entry.text)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                Spacer()
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
             .padding()
         }
-        .navigationTitle(
-            "\(Text(entry.timestamp, style: .date)) \(Text(entry.timestamp, style: .time))"
-        )
-        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                HStack {
+                    Text(entry.timestamp, style: .date)
+                    Text(entry.timestamp, style: .time)
+                }
+            }
+        }
     }
 }
 

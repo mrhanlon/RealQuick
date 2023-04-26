@@ -1,10 +1,3 @@
-//
-//  SpeechRecognizer.swift
-//  RealQuick
-//
-//  Created by Matthew Hanlon on 4/22/23.
-//
-
 import Foundation
 import AVFoundation
 import Speech

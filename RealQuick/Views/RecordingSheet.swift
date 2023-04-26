@@ -1,10 +1,3 @@
-//
-//  RecordEntry.swift
-//  RealQuick
-//
-//  Created by Matthew Hanlon on 4/20/23.
-//
-
 import SwiftUI
 
 struct RecordingSheet: View {
@@ -55,9 +48,6 @@ struct RecordingSheet: View {
                     }
                 }
             }
-        }
-        .onAppear {
-            print("Recording started?!")
         }
     }
 }

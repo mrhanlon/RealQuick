@@ -1,24 +1,13 @@
-//
-//  EntryList.swift
-//  RealQuick
-//
-//  Created by Matthew Hanlon on 4/20/23.
-//
-
 import SwiftUI
 
 struct EntryList: View {
     @Binding var entries: [JournalEntry]
+    @Environment(\.scenePhase) private var scenePhase
     @State private var isRecording = false
-    
-    private func addEntry(text: String) {
-        print(text)
-    }
+    let saveAction: ()->Void
     
     private func deleteEntry(at offsets: IndexSet) {
-        print(entries.count)
         entries.remove(atOffsets: offsets)
-        print(entries.count)
     }
     
     var body: some View {
@@ -39,8 +28,13 @@ struct EntryList: View {
                 }
                 .onDelete(perform: deleteEntry)
             }
+            .overlay(Group {
+                if entries.isEmpty {
+                    Text("No data")
+                }
+            })
             .navigationTitle("Entries")
-            .navigationBarTitleDisplayMode(.large)
+            .navigationBarTitleDisplayMode(.automatic)
             .toolbar {
                 ToolbarItemGroup(placement: .bottomBar) {
                     Button(action: {
@@ -61,9 +55,10 @@ struct EntryList: View {
                 }
             }
             .sheet(isPresented: $isRecording) {
-                print("Recording stopped!")
-            } content: {
                 RecordingSheet(entries: $entries, isRecording: $isRecording)
+            }
+            .onChange(of: scenePhase) { phase in
+                if phase == .inactive { saveAction() }
             }
         }
     }
@@ -72,13 +67,14 @@ struct EntryList: View {
 struct EntryList_Previews: PreviewProvider {
     static var previews: some View {
         MockView()
+        EntryList(entries: .constant([]), saveAction: {})
     }
     
     struct MockView: View {
         @State var entries = JournalEntry.sampleData
         
         var body: some View {
-            EntryList(entries: $entries)
+            EntryList(entries: $entries, saveAction: {})
         }
     }
 }

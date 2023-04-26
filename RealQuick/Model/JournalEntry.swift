@@ -1,17 +1,22 @@
-//
-//  JournalEntry.swift
-//  RealQuick
-//
-//  Created by Matthew Hanlon on 4/23/23.   
-//
-
 import Foundation
+//import CoreLocation
 
-struct JournalEntry: Identifiable {
+struct JournalEntry: Identifiable, Codable {
     var id: UUID
     var text: String
     var timestamp: Date
-    // var location: ???
+    
+//    private var coordinates: Coordinates
+//    var locationCoordinate: CLLocationCoordinate2D {
+//
+//        CLLocationCoordinate2D(latitude: coordinates.latitude,
+//                               longitude: coordinates.longitude)
+//    }
+//
+//    struct Coordinates: Hashable, Codable {
+//        var latitude: Double
+//        var longitude: Double
+//    }
     
     init(id: UUID = UUID(), text: String, timestamp: Date = Date.now) {
         self.id = id
