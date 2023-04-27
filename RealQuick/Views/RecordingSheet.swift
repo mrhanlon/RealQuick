@@ -1,21 +1,37 @@
 import SwiftUI
 
 struct RecordingSheet: View {
-    @State private var entry = JournalEntry(text: "", timestamp: Date.now)
+    @StateObject var speechRecognizer = SpeechRecognizer()
     @Binding var entries: [JournalEntry]
     @Binding var isRecording: Bool
+    @State var newEntryText: String = ""
     
-    private func addEntry(text: String) {
-        entry.text = text
-        entries.append(entry)
+    private func addEntry(_ text: String) {
+        entries.append(JournalEntry(text: text, timestamp: Date.now))
+    }
+    
+    private func startRecording() {
+        speechRecognizer.resetTranscript()
+        speechRecognizer.startTranscribing()
+    }
+    
+    private func finishRecording() {
+        speechRecognizer.stopTranscribing();
+        addEntry(speechRecognizer.transcript)
     }
     
     var body: some View {
         NavigationStack {
             VStack {
-                Text("Real Quick, recording...")
+                HStack {
+                    Text("Listening")
+                    Image(systemName: "mic.fill")
+                }.font(.title)
+                Spacer()
+                Text("This should display the transcribed text in real time, but it doesn't yet...")
+                Spacer()
             }
-            .navigationTitle("Recording")
+            .padding()
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button {
@@ -26,7 +42,6 @@ struct RecordingSheet: View {
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button {
-                        addEntry(text: "Recording finished! Saved recording using the \"Done\" button.")
                         isRecording = false
                     } label: {
                         Text("Done")
@@ -34,7 +49,6 @@ struct RecordingSheet: View {
                 }
                 ToolbarItem(placement: .bottomBar) {
                     Button {
-                        addEntry(text: "Recording finished! Saved recording using the \"Stop\" button.")
                         isRecording = false
                     } label: {
                         ZStack {
@@ -47,6 +61,12 @@ struct RecordingSheet: View {
                         }
                     }
                 }
+            }
+            .onAppear {
+                startRecording()
+            }
+            .onDisappear {
+                finishRecording()
             }
         }
     }
