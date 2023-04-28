@@ -9,19 +9,29 @@ struct RealQuickApp: App {
             EntryList(entries: $journal.entries) {
                 Task {
                     do {
-                        try await journal.save(entries: journal.entries)
+                        try await journal.save()
+                        print("saved journal data")
+                    } catch {
+                        fatalError(error.localizedDescription)
+                    }
+                }
+            } loadAction: {
+                Task {
+                    do {
+                        try await journal.load()
+                        print("loaded journal data; \(journal.entries.count) entries")
                     } catch {
                         fatalError(error.localizedDescription)
                     }
                 }
             }
-            .task {
-                do {
-                    try await journal.load()
-                } catch {
-                    fatalError(error.localizedDescription)
-                }
-            }
+//            .task {
+//                do {
+//                    try await journal.load()
+//                } catch {
+//                    fatalError(error.localizedDescription)
+//                }
+//            }
         }
     }
 }

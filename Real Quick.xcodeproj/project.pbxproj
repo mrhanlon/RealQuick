@@ -17,10 +17,12 @@
 		1FA2B94B29F5ED620024EEF8 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B94A29F5ED620024EEF8 /* JournalEntry.swift */; };
 		1FA2B94E29F5F1830024EEF8 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B94D29F5F1830024EEF8 /* DateExtension.swift */; };
 		1FA2B95229F8C8140024EEF8 /* JournalEntryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B95129F8C8140024EEF8 /* JournalEntryStore.swift */; };
+		1FA2B9A729FA0E310024EEF8 /* CreateJournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B9A629FA0E310024EEF8 /* CreateJournalEntry.swift */; };
+		1FA2B9AA29FA11040024EEF8 /* CreateJournalEntryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B9A929FA11040024EEF8 /* CreateJournalEntryExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1F5C76A029E5077900033918 /* RealQuick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealQuick.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F5C76A029E5077900033918 /* Real Quick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Real Quick.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F5C76A329E5077900033918 /* RealQuickApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealQuickApp.swift; sourceTree = "<group>"; };
 		1F5C76A729E5077A00033918 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F5C76AA29E5077A00033918 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -31,6 +33,8 @@
 		1FA2B94A29F5ED620024EEF8 /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
 		1FA2B94D29F5F1830024EEF8 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		1FA2B95129F8C8140024EEF8 /* JournalEntryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryStore.swift; sourceTree = "<group>"; };
+		1FA2B9A629FA0E310024EEF8 /* CreateJournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateJournalEntry.swift; sourceTree = "<group>"; };
+		1FA2B9A929FA11040024EEF8 /* CreateJournalEntryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateJournalEntryExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +59,7 @@
 		1F5C76A129E5077900033918 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1F5C76A029E5077900033918 /* RealQuick.app */,
+				1F5C76A029E5077900033918 /* Real Quick.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,6 +73,7 @@
 				1FA2B94229F221920024EEF8 /* Views */,
 				1FA2B94C29F5F1490024EEF8 /* Utils */,
 				1F5C76A929E5077A00033918 /* Preview Content */,
+				1FA2B9A829FA0E5B0024EEF8 /* Intents */,
 			);
 			path = RealQuick;
 			sourceTree = "<group>";
@@ -109,12 +114,21 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		1FA2B9A829FA0E5B0024EEF8 /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				1FA2B9A629FA0E310024EEF8 /* CreateJournalEntry.swift */,
+				1FA2B9A929FA11040024EEF8 /* CreateJournalEntryExtension.swift */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1F5C769F29E5077900033918 /* RealQuick */ = {
+		1F5C769F29E5077900033918 /* Real Quick */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1F5C76AE29E5077A00033918 /* Build configuration list for PBXNativeTarget "RealQuick" */;
+			buildConfigurationList = 1F5C76AE29E5077A00033918 /* Build configuration list for PBXNativeTarget "Real Quick" */;
 			buildPhases = (
 				1F5C769C29E5077900033918 /* Sources */,
 				1F5C769D29E5077900033918 /* Frameworks */,
@@ -124,9 +138,9 @@
 			);
 			dependencies = (
 			);
-			name = RealQuick;
+			name = "Real Quick";
 			productName = RealQuick;
-			productReference = 1F5C76A029E5077900033918 /* RealQuick.app */;
+			productReference = 1F5C76A029E5077900033918 /* Real Quick.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -144,7 +158,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1F5C769B29E5077900033918 /* Build configuration list for PBXProject "RealQuick" */;
+			buildConfigurationList = 1F5C769B29E5077900033918 /* Build configuration list for PBXProject "Real Quick" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -157,7 +171,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1F5C769F29E5077900033918 /* RealQuick */,
+				1F5C769F29E5077900033918 /* Real Quick */,
 			);
 		};
 /* End PBXProject section */
@@ -182,7 +196,9 @@
 				1FA2B93D29F2205D0024EEF8 /* RecordingSheet.swift in Sources */,
 				1FA2B95229F8C8140024EEF8 /* JournalEntryStore.swift in Sources */,
 				1FA2B94729F45FF50024EEF8 /* SpeechRecognizer.swift in Sources */,
+				1FA2B9AA29FA11040024EEF8 /* CreateJournalEntryExtension.swift in Sources */,
 				1FA2B94B29F5ED620024EEF8 /* JournalEntry.swift in Sources */,
+				1FA2B9A729FA0E310024EEF8 /* CreateJournalEntry.swift in Sources */,
 				1FA2B94E29F5F1830024EEF8 /* DateExtension.swift in Sources */,
 				1FA2B94129F2209F0024EEF8 /* EntryList.swift in Sources */,
 				1FA2B93F29F220810024EEF8 /* EntryDetail.swift in Sources */,
@@ -315,8 +331,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RealQuick/Preview Content\"";
+				DEVELOPMENT_TEAM = B75T64K234;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Real Quick";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "You can automatically include your current location in a journal entry.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to transcribe journal entries. Audio recordings are discarded after transcription.";
 				INFOPLIST_KEY_NSSiriUsageDescription = "TODO Siri Usage Description";
@@ -347,8 +365,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RealQuick/Preview Content\"";
+				DEVELOPMENT_TEAM = B75T64K234;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Real Quick";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "You can automatically include your current location in a journal entry.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to transcribe journal entries. Audio recordings are discarded after transcription.";
 				INFOPLIST_KEY_NSSiriUsageDescription = "TODO Siri Usage Description";
@@ -374,7 +394,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1F5C769B29E5077900033918 /* Build configuration list for PBXProject "RealQuick" */ = {
+		1F5C769B29E5077900033918 /* Build configuration list for PBXProject "Real Quick" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1F5C76AC29E5077A00033918 /* Debug */,
@@ -383,7 +403,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1F5C76AE29E5077A00033918 /* Build configuration list for PBXNativeTarget "RealQuick" */ = {
+		1F5C76AE29E5077A00033918 /* Build configuration list for PBXNativeTarget "Real Quick" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1F5C76AF29E5077A00033918 /* Debug */,

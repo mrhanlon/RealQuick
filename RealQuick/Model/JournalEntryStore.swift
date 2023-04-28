@@ -1,4 +1,5 @@
 import Foundation
+import CoreData
 
 @MainActor
 class JournalEntryStore: ObservableObject {
@@ -25,13 +26,21 @@ class JournalEntryStore: ObservableObject {
         self.entries = entries
     }
     
-    func save(entries: [JournalEntry]) async throws {
+    func save() async throws {
         let task = Task {
-            let data = try JSONEncoder().encode(entries)
+            let data = try JSONEncoder().encode(self.entries)
             let outfile = try Self.fileURL()
             try data.write(to: outfile)
         }
         _ = try await task.value
 
+    }
+    
+    func addEntry(_ entry: JournalEntry) async throws {
+        try await self.load()
+        print("Intent loaded \(self.entries.count) entries")
+        self.entries.append(entry)
+        try await self.save()
+        print("Intent saved \(self.entries.count) entries")
     }
 }

@@ -5,6 +5,7 @@ struct EntryList: View {
     @Environment(\.scenePhase) private var scenePhase
     @State private var isRecording = false
     let saveAction: ()->Void
+    let loadAction: ()->Void
     
     private func deleteEntry(at offsets: IndexSet) {
         entries.remove(atOffsets: offsets)
@@ -58,7 +59,8 @@ struct EntryList: View {
                 RecordingSheet(entries: $entries, isRecording: $isRecording)
             }
             .onChange(of: scenePhase) { phase in
-                if phase == .inactive { saveAction() }
+                if phase == .background { saveAction() }
+                else if phase == .active { loadAction() }
             }
         }
     }
@@ -67,14 +69,14 @@ struct EntryList: View {
 struct EntryList_Previews: PreviewProvider {
     static var previews: some View {
         MockView()
-        EntryList(entries: .constant([]), saveAction: {})
+        EntryList(entries: .constant([]), saveAction: {}, loadAction: {})
     }
     
     struct MockView: View {
         @State var entries = JournalEntry.sampleData
         
         var body: some View {
-            EntryList(entries: $entries, saveAction: {})
+            EntryList(entries: $entries, saveAction: {}, loadAction: {})
         }
     }
 }
