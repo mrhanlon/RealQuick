@@ -21,8 +21,11 @@ actor SpeechRecognizer: ObservableObject {
         }
     }
     
-    @MainActor var transcript: String = ""
-    @Published var currentTranscript: String = ""
+    @MainActor var transcript: String = "" {
+        willSet {
+            objectWillChange.send()
+        }
+    }
     
     private var audioEngine: AVAudioEngine?
     private var request: SFSpeechAudioBufferRecognitionRequest?

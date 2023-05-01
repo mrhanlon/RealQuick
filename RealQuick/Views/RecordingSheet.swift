@@ -1,13 +1,30 @@
 import SwiftUI
+import Blackbird
 
 struct RecordingSheet: View {
     @StateObject var speechRecognizer = SpeechRecognizer()
-    @Binding var entries: [JournalEntry]
+    @StateObject var locationManager = LocationManager()
+
+    @Environment(\.blackbirdDatabase) var database
     @Binding var isRecording: Bool
-    @State var newEntryText: String = ""
     
     private func addEntry(_ text: String) {
-        entries.append(JournalEntry(text: text, timestamp: Date.now))
+        let entry = JournalEntry(
+            text: text,
+            timestamp: Date.now,
+            address: locationManager.address,
+            latitude: locationManager.location?.latitude,
+            longitude: locationManager.location?.longitude)
+            
+        Task {
+            try await entry.write(to: database!)
+        }
+    }
+    
+    private func getLocation() {
+        locationManager.checkPermission { enabled in
+            locationManager.requestLocation()
+        }
     }
     
     private func startRecording() {
@@ -20,15 +37,20 @@ struct RecordingSheet: View {
         addEntry(speechRecognizer.transcript)
     }
     
+    private func cancelRecording() {
+        speechRecognizer.stopTranscribing();
+    }
+    
     var body: some View {
         NavigationStack {
             VStack {
                 HStack {
                     Text("Listening")
                     Image(systemName: "mic.fill")
+                    Image(systemName: locationManager.locationEnabled ? "location.fill" : "location.slash")
                 }.font(.title)
                 Spacer()
-                Text("This should display the transcribed text in real time, but it doesn't yet...")
+                Text(speechRecognizer.transcript)
                 Spacer()
             }
             .padding()
@@ -36,6 +58,7 @@ struct RecordingSheet: View {
                 ToolbarItem(placement: .cancellationAction) {
                     Button {
                         isRecording = false
+                        cancelRecording()
                     } label: {
                         Text("Cancel")
                     }
@@ -43,6 +66,7 @@ struct RecordingSheet: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button {
                         isRecording = false
+                        finishRecording()
                     } label: {
                         Text("Done")
                     }
@@ -50,6 +74,7 @@ struct RecordingSheet: View {
                 ToolbarItem(placement: .bottomBar) {
                     Button {
                         isRecording = false
+                        finishRecording()
                     } label: {
                         ZStack {
                             Circle()
@@ -63,17 +88,17 @@ struct RecordingSheet: View {
                 }
             }
             .onAppear {
+                getLocation()
                 startRecording()
-            }
-            .onDisappear {
-                finishRecording()
             }
         }
     }
 }
 
 struct RecordEntry_Previews: PreviewProvider {
+    static let database = try! Blackbird.Database.inMemoryDatabase()
     static var previews: some View {
-        RecordingSheet(entries: .constant(JournalEntry.sampleData), isRecording: .constant(true))
+        RecordingSheet(isRecording: .constant(true))
+            .environment(\.blackbirdDatabase, database)
     }
 }

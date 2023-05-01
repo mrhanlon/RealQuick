@@ -16,9 +16,13 @@
 		1FA2B94729F45FF50024EEF8 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B94629F45FF50024EEF8 /* SpeechRecognizer.swift */; };
 		1FA2B94B29F5ED620024EEF8 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B94A29F5ED620024EEF8 /* JournalEntry.swift */; };
 		1FA2B94E29F5F1830024EEF8 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B94D29F5F1830024EEF8 /* DateExtension.swift */; };
-		1FA2B95229F8C8140024EEF8 /* JournalEntryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B95129F8C8140024EEF8 /* JournalEntryStore.swift */; };
 		1FA2B9A729FA0E310024EEF8 /* CreateJournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B9A629FA0E310024EEF8 /* CreateJournalEntry.swift */; };
 		1FA2B9AA29FA11040024EEF8 /* CreateJournalEntryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2B9A929FA11040024EEF8 /* CreateJournalEntryExtension.swift */; };
+		1FE2901829FB75AB00FEA23D /* Blackbird in Frameworks */ = {isa = PBXBuildFile; productRef = 1FE2901729FB75AB00FEA23D /* Blackbird */; };
+		1FE2901C29FB77EC00FEA23D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE2901B29FB77EC00FEA23D /* Constants.swift */; };
+		1FE2901E29FCAECF00FEA23D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE2901D29FCAECF00FEA23D /* LocationManager.swift */; };
+		1FE2902129FDFD4400FEA23D /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE2902029FDFD4400FEA23D /* MapView.swift */; };
+		1FE2902329FE144E00FEA23D /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE2902229FE144E00FEA23D /* Database.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,9 +36,12 @@
 		1FA2B94629F45FF50024EEF8 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		1FA2B94A29F5ED620024EEF8 /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
 		1FA2B94D29F5F1830024EEF8 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
-		1FA2B95129F8C8140024EEF8 /* JournalEntryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryStore.swift; sourceTree = "<group>"; };
 		1FA2B9A629FA0E310024EEF8 /* CreateJournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateJournalEntry.swift; sourceTree = "<group>"; };
 		1FA2B9A929FA11040024EEF8 /* CreateJournalEntryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateJournalEntryExtension.swift; sourceTree = "<group>"; };
+		1FE2901B29FB77EC00FEA23D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1FE2901D29FCAECF00FEA23D /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		1FE2902029FDFD4400FEA23D /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		1FE2902229FE144E00FEA23D /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FE2901829FB75AB00FEA23D /* Blackbird in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,13 +75,14 @@
 		1F5C76A229E5077900033918 /* RealQuick */ = {
 			isa = PBXGroup;
 			children = (
+				1FE2901B29FB77EC00FEA23D /* Constants.swift */,
 				1F5C76A329E5077900033918 /* RealQuickApp.swift */,
 				1F5C76A729E5077A00033918 /* Assets.xcassets */,
-				1FA2B94329F2284F0024EEF8 /* Model */,
-				1FA2B94229F221920024EEF8 /* Views */,
-				1FA2B94C29F5F1490024EEF8 /* Utils */,
-				1F5C76A929E5077A00033918 /* Preview Content */,
 				1FA2B9A829FA0E5B0024EEF8 /* Intents */,
+				1FA2B94329F2284F0024EEF8 /* Model */,
+				1F5C76A929E5077A00033918 /* Preview Content */,
+				1FA2B94C29F5F1490024EEF8 /* Utils */,
+				1FA2B94229F221920024EEF8 /* Views */,
 			);
 			path = RealQuick;
 			sourceTree = "<group>";
@@ -89,6 +98,7 @@
 		1FA2B94229F221920024EEF8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1FE2901F29FDFD3500FEA23D /* Helpers */,
 				1FA2B93C29F2205D0024EEF8 /* RecordingSheet.swift */,
 				1FA2B93E29F220810024EEF8 /* EntryDetail.swift */,
 				1FA2B94029F2209F0024EEF8 /* EntryList.swift */,
@@ -101,7 +111,8 @@
 			children = (
 				1FA2B94629F45FF50024EEF8 /* SpeechRecognizer.swift */,
 				1FA2B94A29F5ED620024EEF8 /* JournalEntry.swift */,
-				1FA2B95129F8C8140024EEF8 /* JournalEntryStore.swift */,
+				1FE2901D29FCAECF00FEA23D /* LocationManager.swift */,
+				1FE2902229FE144E00FEA23D /* Database.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -123,6 +134,14 @@
 			path = Intents;
 			sourceTree = "<group>";
 		};
+		1FE2901F29FDFD3500FEA23D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1FE2902029FDFD4400FEA23D /* MapView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,6 +158,9 @@
 			dependencies = (
 			);
 			name = "Real Quick";
+			packageProductDependencies = (
+				1FE2901729FB75AB00FEA23D /* Blackbird */,
+			);
 			productName = RealQuick;
 			productReference = 1F5C76A029E5077900033918 /* Real Quick.app */;
 			productType = "com.apple.product-type.application";
@@ -167,6 +189,9 @@
 				Base,
 			);
 			mainGroup = 1F5C769729E5077900033918;
+			packageReferences = (
+				1FE2901629FB75AB00FEA23D /* XCRemoteSwiftPackageReference "Blackbird" */,
+			);
 			productRefGroup = 1F5C76A129E5077900033918 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -194,14 +219,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FA2B93D29F2205D0024EEF8 /* RecordingSheet.swift in Sources */,
-				1FA2B95229F8C8140024EEF8 /* JournalEntryStore.swift in Sources */,
+				1FE2901C29FB77EC00FEA23D /* Constants.swift in Sources */,
 				1FA2B94729F45FF50024EEF8 /* SpeechRecognizer.swift in Sources */,
+				1FE2902129FDFD4400FEA23D /* MapView.swift in Sources */,
 				1FA2B9AA29FA11040024EEF8 /* CreateJournalEntryExtension.swift in Sources */,
 				1FA2B94B29F5ED620024EEF8 /* JournalEntry.swift in Sources */,
 				1FA2B9A729FA0E310024EEF8 /* CreateJournalEntry.swift in Sources */,
 				1FA2B94E29F5F1830024EEF8 /* DateExtension.swift in Sources */,
+				1FE2901E29FCAECF00FEA23D /* LocationManager.swift in Sources */,
 				1FA2B94129F2209F0024EEF8 /* EntryList.swift in Sources */,
 				1FA2B93F29F220810024EEF8 /* EntryDetail.swift in Sources */,
+				1FE2902329FE144E00FEA23D /* Database.swift in Sources */,
 				1F5C76A429E5077900033918 /* RealQuickApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,7 +363,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Real Quick";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "You can automatically include your current location in a journal entry.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Automatically include your current location in a journal entry.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to transcribe journal entries. Audio recordings are discarded after transcription.";
 				INFOPLIST_KEY_NSSiriUsageDescription = "TODO Siri Usage Description";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can transcribe journal entries using your voice.";
@@ -369,7 +397,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Real Quick";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "You can automatically include your current location in a journal entry.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Automatically include your current location in a journal entry.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to transcribe journal entries. Audio recordings are discarded after transcription.";
 				INFOPLIST_KEY_NSSiriUsageDescription = "TODO Siri Usage Description";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can transcribe journal entries using your voice.";
@@ -413,6 +441,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1FE2901629FB75AB00FEA23D /* XCRemoteSwiftPackageReference "Blackbird" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marcoarment/Blackbird.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1FE2901729FB75AB00FEA23D /* Blackbird */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1FE2901629FB75AB00FEA23D /* XCRemoteSwiftPackageReference "Blackbird" */;
+			productName = Blackbird;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1F5C769829E5077900033918 /* Project object */;
 }
