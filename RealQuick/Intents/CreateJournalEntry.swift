@@ -18,15 +18,22 @@ struct CreateJournalEntry: AppIntent {
     
     @MainActor
     func perform() async throws -> some IntentResult {
+        let locationManager = LocationManager()
+        let permission = await locationManager.checkPermission()
         var entry = JournalEntry(text: entryText, timestamp: Date.now)
-        // TODO location
+        
+        if permission {
+            let location = await locationManager.getLocation()
+            entry.latitude = location.coordinate.latitude
+            entry.longitude = location.coordinate.longitude
+        }
         
         do {
             try await entry.write(to: Database.shared)
+            return .result(value: "Got it!")
         } catch {
             print(error.localizedDescription)
+            return .result(value: "Something went wrong")
         }
-        
-        return .result(value: "Got it!")
     }
 }

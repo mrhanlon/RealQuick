@@ -1,29 +1,35 @@
 import SwiftUI
 import Blackbird
+import CoreLocation
 
 struct RecordingSheet: View {
     @StateObject var speechRecognizer = SpeechRecognizer()
     @StateObject var locationManager = LocationManager()
+    let geocoder = CLGeocoder()
 
     @Environment(\.blackbirdDatabase) var database
     @Binding var isRecording: Bool
     
+    @State var location: CLLocation?
+    @State var place: CLPlacemark?
+    
     private func addEntry(_ text: String) {
+        let coordinate = location?.coordinate
+        var address: Address?
+        
+        if let place {
+            address = Address(place)
+        }
+        
         let entry = JournalEntry(
             text: text,
             timestamp: Date.now,
-            address: locationManager.address,
-            latitude: locationManager.location?.latitude,
-            longitude: locationManager.location?.longitude)
+            address: address?.description,
+            latitude: coordinate?.latitude,
+            longitude: coordinate?.longitude)
             
         Task {
             try await entry.write(to: database!)
-        }
-    }
-    
-    private func getLocation() {
-        locationManager.checkPermission { enabled in
-            locationManager.requestLocation()
         }
     }
     
@@ -87,8 +93,19 @@ struct RecordingSheet: View {
                     }
                 }
             }
+            .task {
+                do {
+                    location = await locationManager.getLocation()
+                    if let location {
+                        let places = try await geocoder.reverseGeocodeLocation(location)
+                        place = places.first
+                    }
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
             .onAppear {
-                getLocation()
+                locationManager.checkPermission()
                 startRecording()
             }
         }

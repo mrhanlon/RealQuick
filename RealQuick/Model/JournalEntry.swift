@@ -13,11 +13,15 @@ struct JournalEntry: BlackbirdModel {
     @BlackbirdColumn var longitude: Double?
     
     var coordinate: CLLocationCoordinate2D? {
-        if latitude != nil && longitude != nil {
+        if hasLocation() {
             return CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!)
         } else {
             return nil
         }
+    }
+    
+    func hasLocation() -> Bool {
+        return latitude != nil && longitude != nil
     }
 }
 
@@ -34,7 +38,9 @@ extension JournalEntry {
             JournalEntry(
                 id: UUID().uuidString,
                 text: "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-                timestamp: Date.from(2023, 04, 15, 12, 27, 42)!
+                timestamp: Date.from(2023, 04, 15, 12, 27, 42)!,
+                latitude: 37.785834,
+                longitude: -122.406417
             ),
             JournalEntry(
                 id: UUID().uuidString,

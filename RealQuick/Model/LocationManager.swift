@@ -3,10 +3,8 @@ import CoreLocation
 
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     private let manager = CLLocationManager()
-    private let geocoder = CLGeocoder()
 
-    @Published var address: String?
-    @Published var location: CLLocationCoordinate2D?
+    @Published var location: CLLocation?
     @Published var locationEnabled = false
     
     private var permissionsChanged: ((Bool) -> Void)?
@@ -31,8 +29,17 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         if manager.authorizationStatus == .authorizedWhenInUse {
             locationEnabled = true
             completion(true)
+            permissionsChanged = nil
         } else {
             manager.requestWhenInUseAuthorization()
+        }
+    }
+    
+    func checkPermission() async -> Bool {
+        await withCheckedContinuation { continuation in
+            checkPermission { permission in
+                continuation.resume(returning: permission)
+            }
         }
     }
     
@@ -45,22 +52,21 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         manager.requestLocation()
     }
     
-    private func setAddress(_ placemark: CLPlacemark) {
-        address = [placemark.subThoroughfare, placemark.thoroughfare, placemark.locality, placemark.administrativeArea, placemark.postalCode]
-            .compactMap({ $0 })
-            .joined(separator: " ")
+    func getLocation() async -> CLLocation {
+        await withCheckedContinuation { continuation in
+            requestLocation { location in
+                continuation.resume(returning: location)
+            }
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if !locations.isEmpty {
+            location = locations.first!
+            
             if let locationChanged {
                 locationChanged(locations.first!)
-            }
-            
-            location = locations.first!.coordinate
-            geocoder.reverseGeocodeLocation(locations.first!) { (placemarks, error) in
-                guard error == nil && placemarks!.count > 0 else { return }
-                self.setAddress(placemarks!.first!)
+                self.locationChanged = nil
             }
         }
     }

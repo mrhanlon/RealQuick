@@ -23,6 +23,7 @@
 		1FE2901E29FCAECF00FEA23D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE2901D29FCAECF00FEA23D /* LocationManager.swift */; };
 		1FE2902129FDFD4400FEA23D /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE2902029FDFD4400FEA23D /* MapView.swift */; };
 		1FE2902329FE144E00FEA23D /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE2902229FE144E00FEA23D /* Database.swift */; };
+		1FF721672A000605009C0FB5 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF721662A000605009C0FB5 /* Address.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		1FE2901D29FCAECF00FEA23D /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		1FE2902029FDFD4400FEA23D /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		1FE2902229FE144E00FEA23D /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		1FF721662A000605009C0FB5 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				1FA2B94A29F5ED620024EEF8 /* JournalEntry.swift */,
 				1FE2901D29FCAECF00FEA23D /* LocationManager.swift */,
 				1FE2902229FE144E00FEA23D /* Database.swift */,
+				1FF721662A000605009C0FB5 /* Address.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				1FE2902129FDFD4400FEA23D /* MapView.swift in Sources */,
 				1FA2B9AA29FA11040024EEF8 /* CreateJournalEntryExtension.swift in Sources */,
 				1FA2B94B29F5ED620024EEF8 /* JournalEntry.swift in Sources */,
+				1FF721672A000605009C0FB5 /* Address.swift in Sources */,
 				1FA2B9A729FA0E310024EEF8 /* CreateJournalEntry.swift in Sources */,
 				1FA2B94E29F5F1830024EEF8 /* DateExtension.swift in Sources */,
 				1FE2901E29FCAECF00FEA23D /* LocationManager.swift in Sources */,
